@@ -4,6 +4,12 @@ var input;
 var sel;
 var slant;
 
+function preload() {
+  //my table is comma separated value "csv"
+  //and has a header specifying the columns labels
+  table = loadTable("data/ACS_15_5YR_S2401_with_ann_Clean.csv", "csv");
+}
+
 function setup() {
   createCanvas(820, 550);
   background(140);
