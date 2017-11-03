@@ -2144,7 +2144,7 @@ function draw() {
 	  		}
 	}
 	else{
-		createCanvas(1200,600);
+		createCanvas(1600,735);
 		background(color(background_color));
 		translate(width/2,height/2);
 		details(final);
@@ -2354,8 +2354,8 @@ function mousePressed(){
   		}
   	}
   	else{
-  		var dist_to_back = dist(mouseX, mouseY, 600,600-170);
-  		var dist_to_rand = dist(mouseX, mouseY, 600,170);
+  		var dist_to_back = dist(mouseX, mouseY, 800,800-100);
+  		var dist_to_rand = dist(mouseX, mouseY, 800,100);
 
   		if (dist_to_back < 60){
   			stop_looping = false;
@@ -2372,7 +2372,7 @@ function mousePressed(){
 function details(i){
 	console.log(i);
 	rectMode(CENTER);
-	var big_radius = (width/2)-50;
+	var big_radius = (width/2)-100;
 	var small_radius = height/5;
 
 	var num_m = male[i];
@@ -2386,17 +2386,17 @@ function details(i){
 
 	noStroke();
 	textAlign(CENTER, CENTER);
-	textSize(35);
+	textSize(40);
 
 	if (male[i]<female[i]){
 		fill(color(female_color));
 		ellipse(-width/4,0,big_radius,big_radius);
 		noStroke();
-		text(Number((percent_f*100).toFixed(2)) + " %", -525,-260);
+		text(Number((percent_f*100).toFixed(2)) + " %", -715,-320);
 		fill(color(male_color));
 		ellipse(-width/4,0, map(male[i], 0, female[i], 0, big_radius), map(male[i], 0, female[i], 0, big_radius));
 		noStroke();
-		text(Number((percent_m*100).toFixed(2)) + " %", -525,260);
+		text(Number((percent_m*100).toFixed(2)) + " %", -715,320);
 
 		fill(color(background_color));
 		text(jobs[i], -width/4, 0, big_radius, big_radius);
@@ -2404,11 +2404,11 @@ function details(i){
 		fill(color(male_color));
 		ellipse(width/4,0,big_radius,big_radius);
 		noStroke();
-		text(Number((percent_m_sim*100).toFixed(2)) + " %", 525,-260);
+		text(Number((percent_m_sim*100).toFixed(2)) + " %", 715,-320);
 		fill(color(female_color));
 		ellipse(width/4,0, map(female[similar], 0, male[similar], 0, big_radius), map(female[similar], 0, male[similar], 0, big_radius));
 		noStroke();
-		text(Number((percent_f_sim*100).toFixed(2)) + " %", 525,260);
+		text(Number((percent_f_sim*100).toFixed(2)) + " %", 715,320);
 
 		fill(color(background_color));
 		text(jobs[similar], width/4, 0, big_radius, big_radius);
@@ -2420,11 +2420,11 @@ function details(i){
 		fill(color(male_color));
 		ellipse(-width/4,0,big_radius,big_radius);
 		noStroke();
-		text(Number((percent_m*100).toFixed(2)) + " %", -525,-260);
+		text(Number((percent_m*100).toFixed(2)) + " %", -715,-320);
 		fill(color(female_color));
 		ellipse(-width/4,0, map(female[i], 0, male[i], 0, big_radius), map(female[i], 0, male[i], 0, big_radius));
 		noStroke();
-		text(Number((percent_f*100).toFixed(2)) + " %", -525,260);
+		text(Number((percent_f*100).toFixed(2)) + " %", -715,320);
 
 		fill(color(background_color));
 		text(jobs[i], -width/4, 0, big_radius, big_radius);
@@ -2432,11 +2432,11 @@ function details(i){
 		fill(color(female_color));
 		ellipse(width/4,0,big_radius,big_radius);
 		noStroke();
-		text(Number((percent_f_sim*100).toFixed(2))+ " %", 525,-260);
+		text(Number((percent_f_sim*100).toFixed(2))+ " %", 715,-320);
 		fill(color(male_color));
 		ellipse(width/4,0, map(male[similar], 0, female[similar], 0, big_radius), map(male[similar], 0, female[similar], 0, big_radius));
 		noStroke();
-		text(Number((percent_m_sim*100).toFixed(2)) + " %", 525,260);
+		text(Number((percent_m_sim*100).toFixed(2)) + " %", 715,320);
 
 		fill(color(background_color));
 		text(jobs[similar], width/4, 0, big_radius, big_radius);
@@ -2448,7 +2448,7 @@ function details(i){
 	ellipse(0,big_radius-3*small_radius,small_radius,small_radius);
 	ellipse(0,-big_radius+3*small_radius,small_radius,small_radius);
 	fill(color(background_color));
-	textSize(35/2);
+	textSize(20);
 	noStroke();
 	text("Random",0,-big_radius+3*small_radius,small_radius,small_radius);
 	text("Back",0,big_radius-3*small_radius,small_radius,small_radius);
